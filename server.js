@@ -118,7 +118,6 @@ app.post("/borrow", async (req, res) => {
 
   const { Book } = req.body;
   let data = [];
-  console.log("🚀 ~ file: server.js ~ line 125 ~ app.post ~ Array.isArray(Book)", Array.isArray(Book));
   if(Array.isArray(Book)) {
     data = [...Book];
   }
