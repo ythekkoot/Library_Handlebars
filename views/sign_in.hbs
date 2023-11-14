@@ -1,0 +1,27 @@
+<div class="heading">
+    {{>header}} <h1>Sign-In page</h1>
+</div>
+
+<div class="info">
+    <form action="/sign-in" method="POST">
+        <div class="input-group">
+            <label for="userName">Username</label>
+            <input type="text" id="userName" name="username" value="george.tsang@senecacollege.ca"/> 
+        </div>
+
+        <div class="input-group">
+            <label for="passWord">Password</label>
+            <input type="password" id="passWord" name="password" value="web322n1a"/>
+        </div>
+
+        {{#if message}}
+            <div class="alert {{messageClass}}" role="alert">
+        {{message}}
+            </div>
+        {{/if}}
+        <button>Submit</button>
+    </form>
+</div>
+
+
+    

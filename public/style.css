@@ -1,0 +1,179 @@
+*   {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Alegreya', serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./images/lib_image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color:white;
+    margin: 10px auto;
+}
+
+nav {
+    width: 100%;
+    text-align: end;
+}
+
+.navList {
+    list-style: none;
+    margin-right: 5%;
+    margin-top: 10px;
+}
+
+.heading {
+    color: #0375b4;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: top;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    width: 100%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: large;
+    font-weight: bold;
+}
+
+.alert{
+    color: red;
+    position: relative;
+    z-index: 10;
+    top: 5px;
+    /* display: flex;
+    flex-direction: column; */
+    /* align-items: left; */
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 300px;
+    background-color: black;
+    opacity: 0.9;
+    border-radius: 10px;
+}
+
+input {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.07);
+    border-radius: 10px;
+}
+
+.input-group {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+button {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 10px;
+    border: none;
+    background-color: #3F51B5;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin-top: 20px;
+    opacity: 1;
+    justify-self: flex-end;
+    position: relative;
+    bottom: 10px;
+}
+
+button:enabled {
+    cursor: pointer;
+    background-color: #1032f2;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    background-color: #3F51B5;
+}
+
+.home-content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+}
+
+.bookList, .returnList  {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: left;
+    background-color: white;
+    color:black;
+    opacity: 0.8;
+    width: 30%;
+    padding: 10px;
+    border: 5px solid black ;
+    border-radius: 10px;
+    max-width: 500px;
+    min-height: 400px; 
+}
+
+.bookList div, .returnList div {
+    display: flex;
+    align-items: center;
+}
+
+.bookList div input, .returnList div input {
+    margin-right: 10px;
+}
+
+/* .returnList {
+    display: flex;
+    flex-direction: column;
+    align-content: right;
+    justify-content: flex-start;
+    text-align: center;
+    background-color: white;
+    color:black;
+    opacity: 0.8;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: 50px;
+    border: 5px solid black ;
+    border-radius: 10px;
+    height: 30%;
+} */
+
+.book-heading {
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+    text-align: center;
+}

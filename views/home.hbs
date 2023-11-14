@@ -1,0 +1,79 @@
+
+<div class="heading">
+    {{>header}} <h1>Home page</h1>
+</div>
+
+<div class="home-content">
+    <form class="bookList" method="POST" action="/borrow">
+        <h2 class="book-heading">Available Books</h2>
+        {{#each data.availableBooks}}
+            {{#if this.available}}
+            <div id="avail-book-list">
+                <input type="checkbox" id="book" name="Book" value="{{this.title}}"/>
+                <label for="book">{{this.title}}</label> <br>
+            </div>
+            {{/if}}
+        {{/each}}
+        <button id="borrow-button" type="submit">Borrow</button>
+    </form>
+
+    <form class="returnList" method="POST" action="/return">
+        <span class="book-heading"><h2>{{ data.userName }}</h2>
+        <h2>Borrowed Books</h2></span>
+            {{#each data.availableBooks}}
+            {{#if (not this.available)}}
+            <div id="return-book-list">
+                <input type="checkbox" id="book" name="Book" value="{{this.title}}"/>
+                <label for="book">{{this.title}}</label> <br>
+            </div>
+            {{/if}}
+            {{/each}}
+        <button id="return-button" type="submit">Return</button>
+    </form>
+</div>
+
+
+<script>
+    const Books = document.getElementsByName("Book");
+    const booksArray = [...Books];
+    const borrowButton = document.getElementById("borrow-button");
+    borrowButton.disabled = true;
+    const bookList = document.querySelector(".bookList"); 
+    bookList.addEventListener('click', function(event) {
+        let target = event.target;
+        if(target.tagName !== "INPUT") return;
+        borrowBookSelection();
+    });
+
+    function borrowBookSelection() {
+        let isChecked = booksArray.some(book => book.checked === true)
+        if(isChecked) {
+            borrowButton.disabled = false;
+        }
+        else { 
+            borrowButton.disabled = true;
+        }
+    };
+ 
+
+    // For books RETURN functionality    
+    const returnButton = document.getElementById("return-button");
+    returnButton.disabled = true;
+    const returnList = document.querySelector(".returnList");
+    returnList.addEventListener('click', function(event) {
+        let target = event.target;
+        if(target.tagName !== "INPUT") return;
+        returnBookSelection();
+    });
+
+    function returnBookSelection() {
+        let isChecked = booksArray.some(book => book.checked === true)
+        if(isChecked) {
+            returnButton.disabled = false;
+        }
+        else { 
+            returnButton.disabled = true;
+        }
+    };
+
+</script>
