@@ -74,7 +74,7 @@ app.post("/sign-in", (req, res) => {
     if (isValidPass) {
       const authToken = generateAuthToken();
       authTokens[authToken] = username;
-      res.cookie("AuthToken", authToken, { maxAge: 180000 });  // maxAge for timeout after 3 minutes
+      res.cookie("AuthToken", authToken, { maxAge: 180000 });  // Timeout after 3 minutes
       res.redirect("/home");
     } else {
       res.render("sign_in", {
